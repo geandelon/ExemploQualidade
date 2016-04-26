@@ -14,12 +14,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+/**
+ *
+ */
 public class MainActivity extends AppCompatActivity implements OnClickListener {
 
-    public static final double VALORPI = 3.45;
-    private EditText edtNumero;
-    private Button btnVerifica;
-    private TextView txvResultado;
+    private EditText mEdtNumero;
+    private Button mBtnVerifica;
+    private TextView mTxvResultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +30,11 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        edtNumero = (EditText) findViewById(R.id.content_main_edt_numero);
-        btnVerifica = (Button) findViewById(R.id.content_main_btn_verifica);
-        txvResultado = (TextView) findViewById(R.id.content_main_txv_resultado);
+        mEdtNumero = (EditText) findViewById(R.id.content_main_edt_numero);
+        mBtnVerifica = (Button) findViewById(R.id.content_main_btn_verifica);
+        mTxvResultado = (TextView) findViewById(R.id.content_main_txv_resultado);
 
-        btnVerifica.setOnClickListener(this);
+        mBtnVerifica.setOnClickListener(this);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new OnClickListener() {
@@ -70,22 +72,21 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.content_main_btn_verifica:
-                if (!TextUtils.isEmpty(edtNumero.getText())) {
-                    exibirResultado(Primo.isPrimo(Integer.valueOf(edtNumero.getText().toString())));
+                if (!TextUtils.isEmpty(mEdtNumero.getText())) {
+                    exibirResultado(Primo.isPrimo(Integer.parseInt(mEdtNumero.getText().toString())));
+                    //Primo.testeMaluco();
                 }
+                break;
+
+            default:
                 break;
         }
     }
 
     private void exibirResultado(boolean ehPrimo) {
-        if (ehPrimo) {
-            txvResultado.setText(R.string.mensagem_eh_primo);
-        } else {
-            txvResultado.setText(R.string.mensagem_nao_eh_primo);
-        }
+        if (ehPrimo)
+            mTxvResultado.setText(R.string.mensagem_eh_primo);
+         else
+            mTxvResultado.setText(R.string.mensagem_nao_eh_primo);
     }
-
-
-
-
 }
