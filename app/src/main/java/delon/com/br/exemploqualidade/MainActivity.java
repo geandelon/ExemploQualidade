@@ -14,14 +14,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-/**
- *
- */
 public class MainActivity extends AppCompatActivity implements OnClickListener {
 
-    /**
-     *
-     */
     public static final double VALORPI = 3.45;
     private EditText edtNumero;
     private Button btnVerifica;
