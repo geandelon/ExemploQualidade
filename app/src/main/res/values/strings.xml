@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ExemploQualidade</string>
+    <string name="action_settings">Settings</string>
+    <string name="mensagem_digite_numero">Digite o número</string>
+    <string name="mensagem_eh_primo">É primo</string>
+    <string name="mensagem_nao_eh_primo">Não é primo</string>
+    <string name="mensagem_verificar">Verificar</string>
+</resources>
