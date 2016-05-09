@@ -15,7 +15,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 /**
- *
+ * Classe principal do sistema
  */
 public class MainActivity extends AppCompatActivity implements OnClickListener {
 
@@ -84,9 +84,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     }
 
     private void exibirResultado(boolean ehPrimo) {
-        if (ehPrimo)
+        if (ehPrimo) {
             mTxvResultado.setText(R.string.mensagem_eh_primo);
-         else
+        } else {
             mTxvResultado.setText(R.string.mensagem_nao_eh_primo);
+        }
     }
 }
